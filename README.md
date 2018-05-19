@@ -8,19 +8,19 @@ Install by running `npm install -g mysql-parse`
 
 ## Example usage
 
-##Basic
+**Basic**
 
 Running `mysql-parse --uri mysql://examplename:somepassword@examplehost:3306/dbname)` will generate string like this `-u examplename -psomepassword -h examplehost -P 3306 dbname` which you can pass to mysql or mysqldump commands.
 
-## Using mysql
+**Using mysql**
 
 `mysql $(mysql-parse --uri <some mysql connection string>)`
 
-## Using mysqldump
+**Using mysqldump**
 
 `mysqldump $(mysql-parse --uri <some mysql connection string>) > dump.sql`
 
-## Passing in other options to mysql/mysqldump
+**Passing in other options to mysql/mysqldump**
 
 Because the last thing out of mysql-parse is the database name (if defined in the connection string), options need to be added before mysql-parse like so:
 
