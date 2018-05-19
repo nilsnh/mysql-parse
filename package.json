@@ -1,6 +1,6 @@
 {
   "name": "mysql-parse",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Parse a mysql connection string and return access parameters that can be fed to the mysql or mysqldump command line client.",
   "main": "index.js",
   "scripts": {
