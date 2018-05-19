@@ -6,7 +6,7 @@ A command line utility for parsing a mysql connection string and generating the 
 
 Install by running `npm install -g mysql-parse`
 
-## Example usage
+## Usage
 
 **Basic**
 
