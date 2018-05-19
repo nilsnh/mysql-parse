@@ -30,7 +30,7 @@ Because the last thing out of mysql-parse is the database name (if defined in th
 
 1.  Download this project.
 2.  Run tests with `npm test`.
-3.  Develop and submit PR. Please note: If you are considering substantial changes, please open an issue first because the feature you're thinking of might not be right for this project.
+3.  Develop and submit PR. Please note: If you are considering substantial changes, please open an issue to discuss first because the feature you're thinking of might not be right for this project.
 
 ## License
 
