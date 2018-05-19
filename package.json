@@ -1,0 +1,21 @@
+{
+  "name": "mysql-parse",
+  "version": "1.0.0",
+  "description":
+    "Parse a mysql connection string and return access parameters that can be fed to the mysql or mysqldump command line client.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "bin": {
+    "mysql-parse": "./index.js"
+  },
+  "author": "Nils Norman Haukås",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.15.1"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
+}
