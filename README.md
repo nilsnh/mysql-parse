@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/nilsnh/mysql-parse.svg?branch=master)](https://travis-ci.org/nilsnh/mysql-parse)
 
-A command line utility for parsing a mysql connection string and generating the correct connection parameters to feed to a mysql command.
+Tired of manually extracting login credentials from mysql connection strings? Look no further!
+
+This package parses mysql connection strings both on the command line or as a module.
 
 ## Installation
 
