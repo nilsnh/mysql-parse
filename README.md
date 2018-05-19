@@ -8,25 +8,50 @@ A command line utility for parsing a mysql connection string and generating the 
 
 Install by running `npm install -g mysql-parse`
 
-## Usage
+## Usage on command line
 
 **Basic**
 
-Running `mysql-parse --uri mysql://examplename:somepassword@examplehost:3306/dbname)` will generate string like this `-u examplename -psomepassword -h examplehost -P 3306 dbname` which you can pass to mysql or mysqldump commands.
+Running `mysql-parse mysql://examplename:somepassword@examplehost:3306/dbname)` will generate string like this `-u examplename -psomepassword -h examplehost -P 3306 dbname` which you can pass to mysql or mysqldump commands.
 
 **Using mysql**
 
-`mysql $(mysql-parse --uri <some mysql connection string>)`
+`mysql $(mysql-parse <some mysql connection string>)`
 
 **Using mysqldump**
 
-`mysqldump $(mysql-parse --uri <some mysql connection string>) > dump.sql`
+`mysqldump $(mysql-parse <some mysql connection string>) > dump.sql`
 
 **Passing in other options to mysql/mysqldump**
 
 Because the last thing out of mysql-parse is the database name (if defined in the connection string), options need to be added before mysql-parse like so:
 
-`mysqldump --compact $(mysql-parse --uri <some mysql connection string>) > dump.sql`
+`mysqldump --compact $(mysql-parse <some mysql connection string>) > dump.sql`
+
+## Usage as module
+
+```javascript
+const { buildMysqlParams, parseUri } = require('mysql-parse')
+
+const testUri = 'mysql://examplename:somepassword@examplehost:3306/dbname'
+
+console.log(parseUri(testUri))
+/*
+returns
+  {
+   user: 'examplename',
+   password: 'somepassword',
+   host: 'examplehost',
+   port: '3306',
+   database: 'dbname'
+  }
+*/
+
+console.log(buildMysqlParams(testUri))
+/*
+returns '-u examplename -psomepassword -h examplehost -P 3306 dbname'
+*/
+```
 
 ## Development
 
