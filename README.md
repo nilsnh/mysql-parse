@@ -1,5 +1,7 @@
 # Node Mysql parse
 
+[![Build Status](https://travis-ci.org/nilsnh/mysql-parse.svg?branch=master)](https://travis-ci.org/nilsnh/mysql-parse)
+
 A command line utility for parsing a mysql connection string and generating the correct connection parameters to feed to a mysql command.
 
 ## Installation
