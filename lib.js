@@ -7,7 +7,7 @@ function parseUri(uri) {
     host,
     port,
     database
-  ] = /(\w*):\/\/(\w*):(\w*)@([\w|\.|-]*):(\d*)\/(\w*)/g.exec(uri)
+  ] = /(\w*):\/\/(.*):(.*)@(.*):(\d*)\/(\w*)/g.exec(uri)
   return { scheme, user, host, password, port, database }
 }
 
