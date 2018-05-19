@@ -1,0 +1,10 @@
+# Changelog
+
+## 2.0.0
+
+- Simplified command line API.
+- Made package includable as module.
+
+## 1.0.0
+
+- Initial release.
