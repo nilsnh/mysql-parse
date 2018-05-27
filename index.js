@@ -12,7 +12,7 @@ if (require.main === module) {
     process.stdout.write(buildMysqlParams(uri))
     process.exit(0)
   }
-  // give user two seconds to pipe a connection string before giving up
+  // give the user a little time to pipe a connection string before giving up
   const timeRef = setTimeout(() => {
     if (!uri) {
       console.error('Error. Please provide a mysql connection string.')
