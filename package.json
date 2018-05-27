@@ -1,8 +1,7 @@
 {
   "name": "mysql-parse",
-  "version": "2.0.4",
-  "description":
-    "Parse a mysql connection string and return access parameters that can be fed to the mysql or mysqldump command line client.",
+  "version": "2.0.5",
+  "description": "Parse a mysql connection string and return access parameters that can be fed to the mysql or mysqldump command line client.",
   "main": "index.js",
   "scripts": {
     "test": "ava"
@@ -14,7 +13,11 @@
     "type": "git",
     "url": "https://github.com/nilsnh/mysql-parse"
   },
-  "keywords": ["mysql", "connection-string", "mysqldump"],
+  "keywords": [
+    "mysql",
+    "connection-string",
+    "mysqldump"
+  ],
   "author": "Nils Norman Haukås",
   "license": "MIT",
   "dependencies": {},
