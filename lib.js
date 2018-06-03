@@ -1,18 +1,26 @@
+const { URL } = require('url')
+
 function parseUri(uri) {
-  const [
-    originalString,
-    scheme,
+  const {
+    protocol = '',
+    username: user,
+    password,
+    port,
+    hostname: host,
+    pathname = ''
+  } = new URL(uri)
+  return {
+    scheme: protocol.replace(':', ''),
     user,
     password,
     host,
     port,
-    database
-  ] = /(\w*):\/\/(.*):(.*)@(.*):(\d*)\/(\w*)/g.exec(uri)
-  return { scheme, user, host, password, port, database }
+    database: pathname.replace('/', '')
+  }
 }
 
 function buildMysqlParams(uri) {
-  const { scheme, user, host, password, port, database } = parseUri(uri)
+  const { scheme, user, password, host, port, database } = parseUri(uri)
   return [
     user ? `-u ${user}` : '',
     user ? `-p${password}` : '',
