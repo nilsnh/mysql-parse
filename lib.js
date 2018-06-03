@@ -21,13 +21,18 @@ function parseUri(uri) {
 
 function buildMysqlParams(uri) {
   const { scheme, user, password, host, port, database } = parseUri(uri)
-  return [
-    user ? `-u ${user}` : '',
-    user ? `-p${password}` : '',
-    host ? `-h ${host}` : '',
-    port ? `-P ${port}` : '',
-    database ? `${database}` : ''
-  ].join(' ')
+  return (
+    [
+      user ? `-u ${user}` : '',
+      user ? `-p${password}` : '',
+      host ? `-h ${host}` : '',
+      port ? `-P ${port}` : '',
+      database ? `${database}` : ''
+    ]
+      // filter out falsy values to avoid extra spaces on the command line.
+      .filter(value => value)
+      .join(' ')
+  )
 }
 
 module.exports = {
