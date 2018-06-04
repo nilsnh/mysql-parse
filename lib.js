@@ -20,11 +20,11 @@ function parseUri(uri) {
 }
 
 function buildMysqlParams(uri) {
-  const { scheme, user, password, host, port, database } = parseUri(uri)
+  const { user, password, host, port, database } = parseUri(uri)
   return (
     [
       user ? `-u ${user}` : '',
-      user ? `-p${password}` : '',
+      password ? `-p${password}` : '',
       host ? `-h ${host}` : '',
       port ? `-P ${port}` : '',
       database ? `${database}` : ''
